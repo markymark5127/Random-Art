@@ -23,8 +23,7 @@ ExprNode::~ExprNode()
 }
 
 
-// TODO: implement method(s), e.g., to add a child node, to get a child node, etc.
-
+// TODO: implement method(s), e.g., to add a child node, to get a child node, etc
 
 //////////////////////////////////////////////////////////////
 // Methods for XNode
