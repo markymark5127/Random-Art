@@ -4,6 +4,7 @@
 
 #include <cmath>
 #include "ExprNode.h"
+# define M_PI           3.14159265358979323846  /* pi */
 
 // No ExprNode will have more than this number of children
 const int MAX = 3;
@@ -151,7 +152,7 @@ std::string AvgNode::exprAsString() const
     }
     else
     {
-        eval = "avg(" +center->exprAsString() + "," + right->exprAsString() + ")";
+        eval = "avg(" +center->exprAsString() + "," + left->exprAsString() + ")";
     }
     return eval;
 }
