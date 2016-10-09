@@ -61,7 +61,7 @@ public:
     virtual double evaluate(double x, double y) const;
     virtual std::string exprAsString() const;
 };
-// cos value.
+//cos value.
 class CosNode : public ExprNode {
 private:
     // copy constructor and assignment operator are forbidden
