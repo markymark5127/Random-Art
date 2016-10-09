@@ -10,7 +10,6 @@
 class ExprNode {
 private:
     // TODO: add field(s), e.g., to keep track of child nodes
-
     // copy constructor and assignment are forbidden: do not implement them
     ExprNode(const ExprNode &);
     ExprNode& operator=(const ExprNode &);
@@ -27,6 +26,9 @@ public:
     virtual std::string exprAsString() const = 0;
 
     // TODO: add method(s), e.g., to add a child node, to get a child node, etc.
+    ExprNode *left = NULL;
+    ExprNode *right = NULL;
+    ExprNode *center = NULL;
 };
 
 

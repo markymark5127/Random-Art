@@ -86,12 +86,12 @@ CosNode::~CosNode()
 
 double CosNode::evaluate(double x, double y) const
 {
-    return cos(2);
+    return cos(M_PI * center->evaluate(x,y));
 }
 
 std::string CosNode::exprAsString() const
 {
-    return "cos(";
+    return "cos(pi*" + center->exprAsString() + ")";
 }
 //////////////////////////////////////////////////////////////
 // Methods for SinNode
@@ -108,12 +108,12 @@ SinNode::~SinNode()
 
 double SinNode::evaluate(double x, double y) const
 {
-    return sin(2);
+    return sin(M_PI* center->evaluate(x,y));
 }
 
 std::string SinNode::exprAsString() const
 {
-    return "sin(";
+    return "sin(pi*" + center->exprAsString() + ")";
 }
 //////////////////////////////////////////////////////////////
 // Methods for AvgNode
@@ -130,10 +130,28 @@ AvgNode::~AvgNode()
 
 double AvgNode::evaluate(double x, double y) const
 {
-    return (x*y)/2;
+    double eval;
+    if(right != NULL)
+    {
+        eval =(center->evaluate(x,y)*left->evaluate(x,y) * right->evaluate(x,y))/3;
+    }
+    else
+    {
+        eval = (center->evaluate(x,y)*left->evaluate(x,y))/2;
+    }
+    return eval;
 }
 
 std::string AvgNode::exprAsString() const
 {
-    return "avg(";
+    std::string eval;
+    if(right != NULL)
+    {
+        eval ="avg(" + center->exprAsString() + "," + right->exprAsString()+ "," + left->exprAsString() + ")";
+    }
+    else
+    {
+        eval = "avg(" +center->exprAsString() + "," + right->exprAsString() + ")";
+    }
+    return eval;
 }
