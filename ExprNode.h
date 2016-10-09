@@ -46,9 +46,62 @@ public:
     virtual double evaluate(double x, double y) const;
     virtual std::string exprAsString() const;
 };
-
-
-
 // TODO: add classes for other types of ExprNode
+// y coordinate value.
+class YNode : public ExprNode {
+private:
+    // copy constructor and assignment operator are forbidden
+    YNode(const YNode &);
+    YNode& operator=(const YNode &);
+
+public:
+    YNode();
+    virtual ~YNode();
+
+    virtual double evaluate(double x, double y) const;
+    virtual std::string exprAsString() const;
+};
+// cos value.
+class CosNode : public ExprNode {
+private:
+    // copy constructor and assignment operator are forbidden
+    CosNode(const CosNode &);
+    CosNode& operator=(const CosNode &);
+
+public:
+    CosNode();
+    virtual ~CosNode();
+
+    virtual double evaluate(double x, double y) const;
+    virtual std::string exprAsString() const;
+};
+// sin value.
+class SinNode : public ExprNode {
+private:
+    // copy constructor and assignment operator are forbidden
+    SinNode(const SinNode &);
+    SinNode& operator=(const SinNode &);
+
+public:
+    SinNode();
+    virtual ~SinNode();
+
+    virtual double evaluate(double x, double y) const;
+    virtual std::string exprAsString() const;
+};
+// average of values.
+class AvgNode : public ExprNode {
+private:
+    // copy constructor and assignment operator are forbidden
+    AvgNode(const AvgNode &);
+    AvgNode& operator=(const AvgNode &);
+
+public:
+    AvgNode();
+    virtual ~AvgNode();
+
+    virtual double evaluate(double x, double y) const;
+    virtual std::string exprAsString() const;
+};
 
 #endif
